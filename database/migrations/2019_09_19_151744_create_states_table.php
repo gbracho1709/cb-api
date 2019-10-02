@@ -14,12 +14,12 @@ class CreateStatesTable extends Migration
     public function up()
     {
         Schema::create('states', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('countryId');
             $table->timestamps();
         });
-        
+
         Schema::table('states', function ($table) {
             $table->foreign('countryId')->references('id')->on('countries');
         });

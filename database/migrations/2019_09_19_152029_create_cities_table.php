@@ -14,12 +14,12 @@ class CreateCitiesTable extends Migration
     public function up()
     {
         Schema::create('cities', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
-            $table->integer('stateId');
+            $table->unsignedInteger('stateId');
             $table->timestamps();
         });
-        
+
         Schema::table('cities', function ($table) {
             $table->foreign('stateId')->references('id')->on('states');
         });

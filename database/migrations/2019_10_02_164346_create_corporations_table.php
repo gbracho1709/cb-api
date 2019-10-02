@@ -14,15 +14,15 @@ class CreateCorporationsTable extends Migration
     public function up()
     {
         Schema::create('corporations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('address');
             $table->string('website');
             $table->string('phone');
             $table->string('fax');
-            $table->integer('cityId');
+            $table->unsignedInteger('cityId');
             $table->string('zip');
-            $table->integer('clasificationId');
+            $table->unsignedInteger('clasificationId');
             $table->dateTime('started');
             $table->dateTime('incorporate');
             $table->dateTime('fiscalYear');

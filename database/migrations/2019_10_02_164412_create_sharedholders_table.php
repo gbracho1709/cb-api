@@ -14,18 +14,18 @@ class CreateSharedholdersTable extends Migration
     public function up()
     {
         Schema::create('sharedholders', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('title');
             $table->string('securitySocial');
             $table->string('address');
-            $table->integer('cityId');
+            $table->unsignedInteger('cityId');
             $table->string('zip');
             $table->dateTime('birthDay');
             $table->integer('share');
             $table->string('email');
             $table->string('phone');
-            $table->integer('corporationId');
+            $table->unsignedInteger('corporationId');
             $table->timestamps();
         });
 

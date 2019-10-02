@@ -14,15 +14,15 @@ class CreateCredentialBanksTable extends Migration
     public function up()
     {
         Schema::create('credential_banks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('bankId');
+            $table->increments('id');
+            $table->unsignedInteger('bankId');
             $table->string('link');
-            $table->integer('typeCredentialId');
+            $table->unsignedInteger('typeCredentialId');
             $table->string('user');
             $table->string('password');
             $table->string('routing');
             $table->string('account');
-            $table->integer('corporationId');
+            $table->unsignedInteger('corporationId');
             $table->timestamps();
         });
 

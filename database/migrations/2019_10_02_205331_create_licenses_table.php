@@ -14,10 +14,10 @@ class CreateLicensesTable extends Migration
     public function up()
     {
         Schema::create('licenses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('serial');
-            $table->integer('licenseTypeId');
-            $table->integer('corporationId');
+            $table->unsignedInteger('licenseTypeId');
+            $table->unsignedInteger('corporationId');
             $table->dateTime('issueDate');
             $table->dateTime('dueDate');
             $table->string('observation');
@@ -25,7 +25,7 @@ class CreateLicensesTable extends Migration
         });
 
         Schema::table('licenses', function ($table) {
-            $table->foreign('licenseTypeId')->references('id')->on('licenses_types');
+            $table->foreign('licenseTypeId')->references('id')->on('license_types');
             $table->foreign('corporationId')->references('id')->on('corporations');
         });
     }

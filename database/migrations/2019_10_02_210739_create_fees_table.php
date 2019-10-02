@@ -14,12 +14,12 @@ class CreateFeesTable extends Migration
     public function up()
     {
         Schema::create('fees', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('planId');
-            $table->integer('schemeId');
+            $table->increments('id');
+            $table->unsignedInteger('planId');
+            $table->unsignedInteger('schemeId');
             $table->dateTime('started');
             $table->string('fee');
-            $table->integer('corporateId');
+            $table->unsignedInteger('corporateId');
             $table->timestamps();
         });
 
