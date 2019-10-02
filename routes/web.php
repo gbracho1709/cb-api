@@ -38,6 +38,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/licensetypes', 'LicenseTypeController@index');
     $router->post('/licensetype', 'LicenseTypeController@store');
     $router->put('/licensetype/{id}', 'LicenseTypeController@update');
+
+    $router->get('/schemes', 'SchemeController@index');
+    $router->post('/scheme', 'SchemeController@store');
+    $router->put('/scheme/{id}', 'SchemeController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {

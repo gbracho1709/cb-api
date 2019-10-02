@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LicenseType extends Model
+class Scheme extends Model
 {
     /**
      * The attributes that are mass assignable.
