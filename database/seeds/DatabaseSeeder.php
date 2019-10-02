@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call('BanksTableSeeder');
         $this->call('DescriptionsTableSeeder');
         $this->call('TypeCredentialsTableSeeder');
+        $this->call('PlansTableSeeder');
+        $this->call('SchemesTableSeeder');
+        $this->call('ClasificationsTableSeeder');   
     }
 }
