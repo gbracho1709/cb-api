@@ -32,6 +32,12 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->put('/activate/{token}', 'UserController@activate');
     //location//    
     $router->get('/location/cities', 'LocationController@city');
+
+
+    //order
+    $router->get('/licensetypes', 'LicenseTypeController@index');
+    $router->post('/licensetype', 'LicenseTypeController@store');
+    $router->put('/licensetype/{id}', 'LicenseTypeController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
