@@ -46,6 +46,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/typecredentials', 'TypeCredentialController@index');
     $router->post('/typecredentials', 'TypeCredentialController@store');
     $router->put('/typecredentials/{id}', 'TypeCredentialController@update');
+
+    $router->get('/plans', 'PlanController@index');
+    $router->post('/plan', 'PlanController@store');
+    $router->put('/plan/{id}', 'PlanController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
