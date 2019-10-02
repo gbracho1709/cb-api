@@ -42,6 +42,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/schemes', 'SchemeController@index');
     $router->post('/scheme', 'SchemeController@store');
     $router->put('/scheme/{id}', 'SchemeController@update');
+
+    $router->get('/typecredentials', 'TypeCredentialController@index');
+    $router->post('/typecredentials', 'TypeCredentialController@store');
+    $router->put('/typecredentials/{id}', 'TypeCredentialController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
