@@ -24,12 +24,14 @@ class CreateSharedholdersTable extends Migration
             $table->dateTime('birthDay');
             $table->integer('share');
             $table->string('email');
-            $table->string('phone');            
+            $table->string('phone');
+            $table->string('corporationId');
             $table->timestamps();
         });
 
         Schema::table('sharedholders', function ($table) {
-            $table->foreign('cityId')->references('id')->on('cities');            
+            $table->foreign('cityId')->references('id')->on('cities');
+            $table->foreign('corporationId')->references('id')->on('corporations');
         });
     }
 

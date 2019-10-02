@@ -20,14 +20,16 @@ class CreateCredentialsTable extends Migration
             $table->string('password');
             $table->string('pin');
             $table->string('other');
-            $table->string('descriptionId');
-            $table->string('typeId');
+            $table->integer('descriptionId');
+            $table->integer('typeId');
+            $table->integer('corporationId');
             $table->timestamps();
         });
 
         Schema::table('credentials', function ($table) {
             $table->foreign('descriptionId')->references('id')->on('descriptions');
             $table->foreign('typeId')->references('id')->on('type_credentials');
+            $table->foreign('corporationId')->references('id')->on('corporations');
         });
     }
 

@@ -11,7 +11,7 @@ class TypeCredentialsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('states')->insert(
+        DB::table('type_credentials')->insert(
             [
                 [
                     'name' => 'Saving',
