@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
-class LicenseTypesSeeder extends Seeder
+class LicenseTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

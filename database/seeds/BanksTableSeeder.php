@@ -12,7 +12,7 @@ class BanksTableSeeder extends Seeder
      */
     public function run()
     {
-        DB: table('banks')->insert(
+        DB::table('banks')->insert(
             [
                 [
                     'name' => 'Chase',
