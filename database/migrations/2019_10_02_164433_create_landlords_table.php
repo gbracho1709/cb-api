@@ -27,7 +27,7 @@ class CreateLandlordsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('offices_users', function ($table) {
+        Schema::table('landlords', function ($table) {
             $table->foreign('cityId')->references('id')->on('cities');
             $table->foreign('corporationId')->references('id')->on('corporations');
         });

@@ -25,7 +25,7 @@ class CreateSharedholdersTable extends Migration
             $table->integer('share');
             $table->string('email');
             $table->string('phone');
-            $table->string('corporationId');
+            $table->integer('corporationId');
             $table->timestamps();
         });
 

@@ -98,6 +98,7 @@ $app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 $app->configure('mail');
 $app->configure('filesystems');
 $app->configure('swagger-lume');
+$app->configure('database');
 
 
 /*

@@ -15,7 +15,7 @@ class CreateCredentialBanksTable extends Migration
     {
         Schema::create('credential_banks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id');
+            $table->integer('bankId');
             $table->string('link');
             $table->integer('typeCredentialId');
             $table->string('user');
@@ -29,6 +29,7 @@ class CreateCredentialBanksTable extends Migration
         Schema::table('credential_banks', function ($table) {
             $table->foreign('typeCredentialId')->references('id')->on('type_credentials');
             $table->foreign('corporationId')->references('id')->on('corporations');
+            $table->foreign('bankId')->references('id')->on('banks');
         });
     }
 
