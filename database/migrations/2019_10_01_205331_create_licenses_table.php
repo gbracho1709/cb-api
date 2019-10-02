@@ -19,7 +19,8 @@ class CreateLicensesTable extends Migration
             $table->integer('licenseType');
             $table->integer('clientId');
             $table->dateTime('issueDate');
-            $table->dateTime('DueDate');
+            $table->dateTime('dueDate');
+            $table->string('observation');
             $table->timestamps();
         });
 
