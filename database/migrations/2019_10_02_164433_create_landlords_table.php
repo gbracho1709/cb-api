@@ -14,16 +14,16 @@ class CreateLandlordsTable extends Migration
     public function up()
     {
         Schema::create('landlords', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
-            $table->unsignedInteger('cityId');
+            $table->unsignedBigInteger('cityId');
             $table->string('zip');
             $table->string('phone');
             $table->string('mobile');
             $table->string('email');
             $table->string('note');
-            $table->unsignedInteger('corporationId');
+            $table->unsignedBigInteger('corporationId');
             $table->timestamps();
         });
 

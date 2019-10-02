@@ -14,15 +14,15 @@ class CreateCredentialsTable extends Migration
     public function up()
     {
         Schema::create('credentials', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('link');
             $table->string('user');
             $table->string('password');
             $table->string('pin');
             $table->string('other');
-            $table->unsignedInteger('descriptionId');
-            $table->unsignedInteger('typeId');
-            $table->unsignedInteger('corporationId');
+            $table->unsignedBigInteger('descriptionId');
+            $table->unsignedBigInteger('typeId');
+            $table->unsignedBigInteger('corporationId');
             $table->timestamps();
         });
 

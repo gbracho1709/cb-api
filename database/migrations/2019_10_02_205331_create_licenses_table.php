@@ -14,10 +14,10 @@ class CreateLicensesTable extends Migration
     public function up()
     {
         Schema::create('licenses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('serial');
-            $table->unsignedInteger('licenseTypeId');
-            $table->unsignedInteger('corporationId');
+            $table->unsignedBigInteger('licenseTypeId');
+            $table->unsignedBigInteger('corporationId');
             $table->dateTime('issueDate');
             $table->dateTime('dueDate');
             $table->string('observation');

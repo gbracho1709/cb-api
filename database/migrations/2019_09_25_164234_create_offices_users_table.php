@@ -14,10 +14,10 @@ class CreateOfficesUsersTable extends Migration
     public function up()
     {
         Schema::create('offices_users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user');
-            $table->unsignedInteger('office');
-            $table->unsignedInteger('owner');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('office');
+            $table->unsignedBigInteger('owner');
             $table->timestamps();
         });
 
