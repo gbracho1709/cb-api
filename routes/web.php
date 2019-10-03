@@ -63,9 +63,9 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/clasification', 'ClasificationController@store');
     $router->put('/clasification/{id}', 'ClasificationController@update');
 
-    $router->get('/corporations', 'CorporationController@index');
-    $router->post('/corporation', 'CorporationController@store');
-    $router->put('/corporation/{id}', 'CorporationController@update');
+    $router->get('/credentialbanks', 'CredentialBankController@index');
+    $router->post('/credentialbank', 'CredentialBankController@store');
+    $router->put('/credentialbank/{id}', 'CredentialBankController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
