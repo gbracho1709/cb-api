@@ -74,6 +74,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/landlords', 'LandLordController@index');
     $router->post('/landlord', 'LandLordController@store');
     $router->put('/landlord/{id}', 'LandLordController@update');
+
+    $router->get('/licenses', 'LicenseController@index');
+    $router->post('/license', 'LicenseController@store');
+    $router->put('/license/{id}', 'LicenseController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
