@@ -58,6 +58,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/banks', 'BankController@index');
     $router->post('/bank', 'BankController@store');
     $router->put('/bank/{id}', 'BankController@update');
+
+    $router->get('/clasifications', 'ClasificationController@index');
+    $router->post('/clasification', 'ClasificationController@store');
+    $router->put('/clasification/{id}', 'ClasificationController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
