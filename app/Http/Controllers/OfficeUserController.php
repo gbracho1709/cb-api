@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
-use App\OfficesUser;
+use App\OfficeUser;
 
 class OfficeUserController extends Controller
 {
@@ -21,7 +21,7 @@ class OfficeUserController extends Controller
 
     public function find($request)
     {
-        $officeUser = OfficesUser::where('owner', $request)
+        $officeUser = OfficeUser::where('owner', $request)
             ->with('user')
             ->get();
         return response()->json($officeUser);
@@ -35,7 +35,7 @@ class OfficeUserController extends Controller
             'owner' => 'required'
         ]);
 
-        $user = new OfficesUser;
+        $user = new OfficeUser;
         $user->user = $request->user;
         $user->office = $request->office;
         $user->owner = $request->owner;
