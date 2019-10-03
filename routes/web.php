@@ -51,9 +51,9 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/plan', 'PlanController@store');
     $router->put('/plan/{id}', 'PlanController@update');
 
-    $router->get('/credentialdescriptions', 'CredentialDescriptionController@index');
-    $router->post('/credentialdescription', 'CredentialDescriptionController@store');
-    $router->put('/credentialdescription/{id}', 'CredentialDescriptionController@update');
+    $router->get('/credentialinputs', 'CredentialInputController@index');
+    $router->post('/credentialinput', 'CredentialInputController@store');
+    $router->put('/credentialinput/{id}', 'CredentialInputController@update');
 
     $router->get('/banks', 'BankController@index');
     $router->post('/bank', 'BankController@store');

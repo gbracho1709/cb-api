@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CredentialDescription;
+use App\CredentialInput;
 
-class CredentialDescriptionController extends Controller
+class CredentialInputController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CredentialDescriptionController extends Controller
      */
     public function index()
     {
-        $description = CredentialDescription::All();
-        return response()->json($description);
+        $input = CredentialInput::All();
+        return response()->json($input);
     }
 
     /**
@@ -30,11 +30,11 @@ class CredentialDescriptionController extends Controller
             'name' => 'required'
         ]);
 
-        $description = new CredentialDescription;
-        $description->name = $request->name;
-        $description->save();
+        $input = new CredentialInput;
+        $input->name = $request->name;
+        $input->save();
 
-        return response()->json($description);
+        return response()->json($input);
     }
 
     /**
@@ -61,11 +61,11 @@ class CredentialDescriptionController extends Controller
             'name' => 'required'
         ]);
 
-        $description = CredentialDescription::find($id);
-        $description->name = $request->name;
-        $description->save();
+        $input = CredentialInput::find($id);
+        $input->name = $request->name;
+        $input->save();
 
-        return response()->json($description);
+        return response()->json($input);
     }
 
     /**
