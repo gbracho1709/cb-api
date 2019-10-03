@@ -16,22 +16,22 @@ class ClasificationsTableSeeder extends Seeder
             [
                 [
                     'code' => 233100,
-                    'description' => 'Printing ^RElated Support Activities',
+                    'name' => 'Printing ^RElated Support Activities',
                     'created_at' => Carbon::now()
                 ],
                 [
                     'code' => 236110,
-                    'description' => 'Residential Building Constructions',
+                    'name' => 'Residential Building Constructions',
                     'created_at' => Carbon::now()
                 ],
                 [
                     'code' => 238220,
-                    'description' => 'Plumbing. Heating ^Air/Conditioning Contractors',
+                    'name' => 'Plumbing. Heating ^Air/Conditioning Contractors',
                     'created_at' => Carbon::now()
                 ],
                 [
                     'code' => 334310,
-                    'description' => 'Audio ^Video Equipment Mfg',
+                    'name' => 'Audio ^Video Equipment Mfg',
                     'created_at' => Carbon::now()
                 ]
             ]
