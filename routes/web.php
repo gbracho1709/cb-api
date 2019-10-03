@@ -66,6 +66,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/credentialbanks', 'CredentialBankController@index');
     $router->post('/credentialbank', 'CredentialBankController@store');
     $router->put('/credentialbank/{id}', 'CredentialBankController@update');
+
+    $router->get('/credentials', 'CredentialController@index');
+    $router->post('/credential', 'CredentialController@store');
+    $router->put('/credential/{id}', 'CredentialController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
