@@ -63,7 +63,6 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/clasification', 'ClasificationController@store');
     $router->put('/clasification/{id}', 'ClasificationController@update');
 
-
     $router->get('/corporations', 'CorporationController@index');
     $router->post('/corporation', 'CorporationController@store');
     $router->put('/corporation/{id}', 'CorporationController@update');
