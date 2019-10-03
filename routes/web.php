@@ -70,6 +70,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/credentials', 'CredentialController@index');
     $router->post('/credential', 'CredentialController@store');
     $router->put('/credential/{id}', 'CredentialController@update');
+
+    $router->get('/landlords', 'LandLordController@index');
+    $router->post('/landlord', 'LandLordController@store');
+    $router->put('/landlord/{id}', 'LandLordController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
