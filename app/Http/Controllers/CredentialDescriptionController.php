@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Description;
+use App\CredentialDescription;
 
-class DescriptionController extends Controller
+class CredentialDescriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DescriptionController extends Controller
      */
     public function index()
     {
-        $description = Description::All();
+        $description = CredentialDescription::All();
         return response()->json($description);
     }
 
@@ -30,7 +30,7 @@ class DescriptionController extends Controller
             'name' => 'required'
         ]);
 
-        $description = new Description;
+        $description = new CredentialDescription;
         $description->name = $request->name;
         $description->save();
 
@@ -61,7 +61,7 @@ class DescriptionController extends Controller
             'name' => 'required'
         ]);
 
-        $description = Description::find($id);
+        $description = CredentialDescription::find($id);
         $description->name = $request->name;
         $description->save();
 

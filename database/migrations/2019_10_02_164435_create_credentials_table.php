@@ -27,8 +27,8 @@ class CreateCredentialsTable extends Migration
         });
 
         Schema::table('credentials', function ($table) {
-            $table->foreign('descriptionId')->references('id')->on('descriptions');
-            $table->foreign('typeId')->references('id')->on('type_credentials');
+            $table->foreign('descriptionId')->references('id')->on('credential_descriptions');
+            $table->foreign('typeId')->references('id')->on('bank_accounts');
             $table->foreign('corporationId')->references('id')->on('corporations');
         });
     }

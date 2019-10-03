@@ -17,7 +17,7 @@ class CreateCredentialBanksTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bankId');
             $table->string('link');
-            $table->unsignedBigInteger('typeCredentialId');
+            $table->unsignedBigInteger('typeId');
             $table->string('user');
             $table->string('password');
             $table->string('routing');
@@ -27,7 +27,7 @@ class CreateCredentialBanksTable extends Migration
         });
 
         Schema::table('credential_banks', function ($table) {
-            $table->foreign('typeCredentialId')->references('id')->on('type_credentials');
+            $table->foreign('typeId')->references('id')->on('bank_accounts');
             $table->foreign('corporationId')->references('id')->on('corporations');
             $table->foreign('bankId')->references('id')->on('banks');
         });

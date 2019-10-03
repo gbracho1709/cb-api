@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeCredentialsTable extends Migration
+class CreateBankAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTypeCredentialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_credentials', function (Blueprint $table) {
+        Schema::create('bank_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTypeCredentialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_credentials');
+        Schema::dropIfExists('bank_accounts');
     }
 }

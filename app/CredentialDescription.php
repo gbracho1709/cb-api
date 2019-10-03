@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeCredential extends Model
+class CredentialDescription extends Model
 {
     /**
      * The attributes that are mass assignable.

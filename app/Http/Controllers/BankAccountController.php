@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TypeCredential;
+use App\BankAccount;
 
-class TypeCredentialController extends Controller
+class BankAccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TypeCredentialController extends Controller
      */
     public function index()
     {
-        $typecredential = TypeCredential::All();
-        return response()->json($typecredential);
+        $type = BankAccount::All();
+        return response()->json($type);
     }
 
     /**
@@ -30,11 +30,11 @@ class TypeCredentialController extends Controller
             'name' => 'required'
         ]);
 
-        $typecredential = new TypeCredential;
-        $typecredential->name = $request->name;
-        $typecredential->save();
+        $type = new BankAccount;
+        $type->name = $request->name;
+        $type->save();
 
-        return response()->json($typecredential);
+        return response()->json($type);
     }
 
     /**
@@ -61,11 +61,11 @@ class TypeCredentialController extends Controller
             'name' => 'required'
         ]);
 
-        $typecredential = TypeCredential::find($id);
-        $typecredential->name = $request->name;
-        $typecredential->save();
+        $type = BankAccount::find($id);
+        $type->name = $request->name;
+        $type->save();
 
-        return response()->json($typecredential);
+        return response()->json($type);
     }
 
     /**

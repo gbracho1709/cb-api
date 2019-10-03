@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class DescriptionsTableSeeder extends Seeder
+class CredentialDescriptionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class DescriptionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('descriptions')->insert(
+        DB::table('credential_descriptions')->insert(
             [
                 [
                     'name' => 'Breadcrumb',

@@ -43,17 +43,17 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/scheme', 'SchemeController@store');
     $router->put('/scheme/{id}', 'SchemeController@update');
 
-    $router->get('/typecredentials', 'TypeCredentialController@index');
-    $router->post('/typecredentials', 'TypeCredentialController@store');
-    $router->put('/typecredentials/{id}', 'TypeCredentialController@update');
+    $router->get('/bankaccounts', 'BankAccountController@index');
+    $router->post('/bankaccount', 'BankAccountController@store');
+    $router->put('/bankaccount/{id}', 'BankAccountController@update');
 
     $router->get('/plans', 'PlanController@index');
     $router->post('/plan', 'PlanController@store');
     $router->put('/plan/{id}', 'PlanController@update');
 
-    $router->get('/descriptions', 'DescriptionController@index');
-    $router->post('/description', 'DescriptionController@store');
-    $router->put('/description/{id}', 'DescriptionController@update');
+    $router->get('/credentialdescriptions', 'CredentialDescriptionController@index');
+    $router->post('/credential', 'CredentialDescriptionController@store');
+    $router->put('/credential/{id}', 'CredentialDescriptionController@update');
 
     $router->get('/banks', 'BankController@index');
     $router->post('/bank', 'BankController@store');

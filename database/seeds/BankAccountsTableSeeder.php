@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class TypeCredentialsTableSeeder extends Seeder
+class BankAccountsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class TypeCredentialsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('type_credentials')->insert(
+        DB::table('bank_accounts')->insert(
             [
                 [
                     'name' => 'Saving',
