@@ -25,7 +25,7 @@ class CreateCorporatesTable extends Migration
             $table->unsignedBigInteger('clasificationId');
             $table->dateTime('started');
             $table->dateTime('incorporate');
-            $table->dateTime('fiscalYear');
+            $table->string('fiscalYear');
             $table->string('certification');
             $table->string('federal');
             $table->timestamps();

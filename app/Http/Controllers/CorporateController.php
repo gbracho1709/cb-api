@@ -31,6 +31,7 @@ class CorporateController extends Controller
             'address' => 'required',
             'website' => 'required|url',
             'fax' => 'required',
+            'phone' => 'required',
             'city' => 'required',
             'zip' => 'required',
             'clasification' => 'required',
@@ -44,7 +45,8 @@ class CorporateController extends Controller
         $corporate = new Corporate;
         $corporate->name = $request->name;
         $corporate->address = $request->address;
-        $corporate->website = $request->phone;
+        $corporate->website = $request->website;
+        $corporate->phone = $request->phone;
         $corporate->fax = $request->fax;
         $corporate->cityId = $request->city;
         $corporate->zip = $request->zip;
@@ -84,6 +86,7 @@ class CorporateController extends Controller
             'address' => 'required',
             'website' => 'required|url',
             'fax' => 'required',
+            'phone' => 'required',
             'city' => 'required',
             'zip' => 'required',
             'clasification' => 'required',
@@ -97,7 +100,8 @@ class CorporateController extends Controller
         $corporate = Corporate::find($id);
         $corporate->name = $request->name;
         $corporate->address = $request->address;
-        $corporate->website = $request->phone;
+        $corporate->website = $request->website;
+        $corporate->phone = $request->phone;
         $corporate->fax = $request->fax;
         $corporate->cityId = $request->city;
         $corporate->zip = $request->zip;
