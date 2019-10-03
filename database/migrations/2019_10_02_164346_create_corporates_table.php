@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCorporationsTable extends Migration
+class CreateCorporatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCorporationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('corporations', function (Blueprint $table) {
+        Schema::create('corporates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
@@ -31,7 +31,7 @@ class CreateCorporationsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('corporations', function ($table) {
+        Schema::table('corporates', function ($table) {
             $table->foreign('cityId')->references('id')->on('cities');
             $table->foreign('clasificationId')->references('id')->on('clasifications');
         });

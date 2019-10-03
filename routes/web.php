@@ -83,9 +83,9 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/sharedholder', 'SharedholderController@store');
     $router->put('/sharedholder/{id}', 'SharedholderController@update');
 
-    $router->get('/corporations', 'CorporationController@index');
-    $router->post('/corporation', 'CorporationController@store');
-    $router->put('/corporation/{id}', 'CorporationController@update');
+    $router->get('/corporates', 'CorporateController@index');
+    $router->post('/corporate', 'CorporateController@store');
+    $router->put('/corporate/{id}', 'CorporateController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {

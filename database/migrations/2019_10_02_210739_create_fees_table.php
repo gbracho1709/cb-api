@@ -26,7 +26,7 @@ class CreateFeesTable extends Migration
         Schema::table('fees', function ($table) {
             $table->foreign('planId')->references('id')->on('plans');
             $table->foreign('schemeId')->references('id')->on('schemes');
-            $table->foreign('corporateId')->references('id')->on('corporations');
+            $table->foreign('corporateId')->references('id')->on('corporates');
         });
     }
 

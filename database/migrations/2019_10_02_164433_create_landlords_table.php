@@ -23,13 +23,13 @@ class CreateLandlordsTable extends Migration
             $table->string('mobile');
             $table->string('email');
             $table->string('note');
-            $table->unsignedBigInteger('corporationId');
+            $table->unsignedBigInteger('corporateId');
             $table->timestamps();
         });
 
         Schema::table('landlords', function ($table) {
             $table->foreign('cityId')->references('id')->on('cities');
-            $table->foreign('corporationId')->references('id')->on('corporations');
+            $table->foreign('corporateId')->references('id')->on('corporates');
         });
     }
 

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Corporation;
+use App\Corporate;
 
-class CorporationController extends Controller
+class CorporateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CorporationController extends Controller
      */
     public function index()
     {
-        $corporation = Corporation::All();
-        return response()->json($corporation);
+        $corporate = Corporate::All();
+        return response()->json($corporate);
     }
 
     /**
@@ -41,22 +41,22 @@ class CorporationController extends Controller
             'federal' => 'required'
         ]);
 
-        $corporation = new Corporation;
-        $corporation->name = $request->name;
-        $corporation->address = $request->address;
-        $corporation->website = $request->phone;
-        $corporation->fax = $request->fax;
-        $corporation->cityId = $request->city;
-        $corporation->zip = $request->zip;
-        $corporation->clasificationId = $request->clasification;
-        $corporation->started = $request->started;
-        $corporation->incorporate = $request->incorporate;
-        $corporation->fiscalYear = $request->fiscalyear;
-        $corporation->certification = $request->certification;
-        $corporation->federal = $request->federal;
-        $corporation->save();
+        $corporate = new Corporate;
+        $corporate->name = $request->name;
+        $corporate->address = $request->address;
+        $corporate->website = $request->phone;
+        $corporate->fax = $request->fax;
+        $corporate->cityId = $request->city;
+        $corporate->zip = $request->zip;
+        $corporate->clasificationId = $request->clasification;
+        $corporate->started = $request->started;
+        $corporate->incorporate = $request->incorporate;
+        $corporate->fiscalYear = $request->fiscalyear;
+        $corporate->certification = $request->certification;
+        $corporate->federal = $request->federal;
+        $corporate->save();
 
-        return response()->json($corporation);
+        return response()->json($corporate);
     }
 
     /**
@@ -94,22 +94,22 @@ class CorporationController extends Controller
             'federal' => 'required'
         ]);
 
-        $corporation = Corporation::find($id);
-        $corporation->name = $request->name;
-        $corporation->address = $request->address;
-        $corporation->website = $request->phone;
-        $corporation->fax = $request->fax;
-        $corporation->cityId = $request->city;
-        $corporation->zip = $request->zip;
-        $corporation->clasificationId = $request->clasification;
-        $corporation->started = $request->started;
-        $corporation->incorporate = $request->incorporate;
-        $corporation->fiscalYear = $request->fiscalyear;
-        $corporation->certification = $request->certification;
-        $corporation->federal = $request->federal;
-        $corporation->save();
+        $corporate = Corporate::find($id);
+        $corporate->name = $request->name;
+        $corporate->address = $request->address;
+        $corporate->website = $request->phone;
+        $corporate->fax = $request->fax;
+        $corporate->cityId = $request->city;
+        $corporate->zip = $request->zip;
+        $corporate->clasificationId = $request->clasification;
+        $corporate->started = $request->started;
+        $corporate->incorporate = $request->incorporate;
+        $corporate->fiscalYear = $request->fiscalyear;
+        $corporate->certification = $request->certification;
+        $corporate->federal = $request->federal;
+        $corporate->save();
 
-        return response()->json($corporation);
+        return response()->json($corporate);
     }
 
     /**
