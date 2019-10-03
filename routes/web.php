@@ -54,6 +54,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/descriptions', 'DescriptionController@index');
     $router->post('/description', 'DescriptionController@store');
     $router->put('/description/{id}', 'DescriptionController@update');
+
+    $router->get('/banks', 'BankController@index');
+    $router->post('/bank', 'BankController@store');
+    $router->put('/bank/{id}', 'BankController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
