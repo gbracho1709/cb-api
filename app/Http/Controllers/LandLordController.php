@@ -35,7 +35,7 @@ class LandlordController extends Controller
             'mobile' => 'required',
             'email' => 'required|email',
             'note' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $landlord = new Landlord;
@@ -47,7 +47,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->corporationId = $request->corporation;
+        $landlord->corporateId = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);
@@ -82,7 +82,7 @@ class LandlordController extends Controller
             'mobile' => 'required',
             'email' => 'required|email',
             'note' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $landlord = Landlord::find($id);
@@ -94,7 +94,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->corporationId = $request->corporation;
+        $landlord->corporateId = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);
