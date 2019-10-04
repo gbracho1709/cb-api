@@ -89,6 +89,9 @@ $app->register(\Illuminate\Mail\MailServiceProvider::class);
 // $app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+if ($app->environment() == 'local')
+    $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Config
