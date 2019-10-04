@@ -27,27 +27,23 @@ class CredentialController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
             'link' => 'required|url',
             'user' => 'required',
             'password' => 'required',
             'pin' => 'required',
             'other' => 'required',
-            'description' => 'required',
-            'type' => 'required',
-            'corporation' => 'required'
+            'input' => 'required',
+            'corporate' => 'required'
         ]);
 
         $credential = new Credential;
-        $credential->name = $request->name;
         $credential->link = $request->link;
         $credential->user = $request->user;
         $credential->password = $request->password;
         $credential->pin = $request->pin;
         $credential->other = $request->other;
-        $credential->descriptionId = $request->description;
-        $credential->typeId = $request->type;
-        $credential->corporationId = $request->corporation;
+        $credential->inputId = $request->input;
+        $credential->corporateId = $request->corporate;
         $credential->save();
 
         return response()->json($credential);
@@ -74,27 +70,23 @@ class CredentialController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
             'link' => 'required|url',
             'user' => 'required',
             'password' => 'required',
             'pin' => 'required',
             'other' => 'required',
-            'description' => 'required',
-            'type' => 'required',
-            'corporation' => 'required'
+            'input' => 'required',
+            'corporate' => 'required'
         ]);
 
         $credential = Credential::find($id);
-        $credential->name = $request->name;
         $credential->link = $request->link;
         $credential->user = $request->user;
         $credential->password = $request->password;
         $credential->pin = $request->pin;
         $credential->other = $request->other;
-        $credential->descriptionId = $request->description;
-        $credential->typeId = $request->type;
-        $credential->corporationId = $request->corporation;
+        $credential->inputId = $request->input;
+        $credential->corporateId = $request->corporate;
         $credential->save();
 
         return response()->json($credential);

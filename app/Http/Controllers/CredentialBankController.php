@@ -29,23 +29,23 @@ class CredentialBankController extends Controller
         $this->validate($request, [
             'bank' => 'required',
             'link' => 'required|url',
-            'typecredential' => 'required',
+            'type' => 'required',
             'user' => 'required',
             'password' => 'required',
             'routing' => 'required',
             'account' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $credentialbank = new CredentialBank;
         $credentialbank->bankId = $request->bank;
         $credentialbank->link = $request->link;
-        $credentialbank->typeCredentialId = $request->typecredential;
+        $credentialbank->typeId = $request->type;
         $credentialbank->user = $request->user;
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporationId = $request->corporation;
+        $credentialbank->corporateId = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);
@@ -74,23 +74,23 @@ class CredentialBankController extends Controller
         $this->validate($request, [
             'bank' => 'required',
             'link' => 'required|url',
-            'typecredential' => 'required',
+            'type' => 'required',
             'user' => 'required',
             'password' => 'required',
             'routing' => 'required',
             'account' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $credentialbank = CredentialBank::find($id);
         $credentialbank->bankId = $request->bank;
         $credentialbank->link = $request->link;
-        $credentialbank->typeCredentialId = $request->typecredential;
+        $credentialbank->typeId = $request->type;
         $credentialbank->user = $request->user;
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporationId = $request->corporation;
+        $credentialbank->corporateId = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);
