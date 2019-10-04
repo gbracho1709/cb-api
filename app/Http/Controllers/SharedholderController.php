@@ -30,14 +30,14 @@ class SharedholderController extends Controller
             'name' => 'required',
             'title' => 'required',
             'securitysocial' => 'required',
-            'address' => 'required|date',
-            'city' => 'required|date',
+            'address' => 'required',
+            'city' => 'required',
             'zip' => 'required',
             'birthday' => 'required|date',
             'share' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $sharedholder = new Sharedholder;
@@ -51,7 +51,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->corporationId = $request->corporation;
+        $sharedholder->corporateId = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);
@@ -81,14 +81,14 @@ class SharedholderController extends Controller
             'name' => 'required',
             'title' => 'required',
             'securitysocial' => 'required',
-            'address' => 'required|date',
-            'city' => 'required|date',
+            'address' => 'required',
+            'city' => 'required',
             'zip' => 'required',
             'birthday' => 'required|date',
             'share' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'corporation' => 'required'
+            'corporate' => 'required'
         ]);
 
         $sharedholder = Sharedholder::find($id);
@@ -102,7 +102,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->corporationId = $request->corporation;
+        $sharedholder->corporateId = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);
