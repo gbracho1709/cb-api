@@ -28,19 +28,19 @@ class LicenseController extends Controller
     {
         $this->validate($request, [
             'serial' => 'required',
-            'licensetype' => 'required',
-            'corporation' => 'required',
-            'issuedate' => 'required|date',
-            'duedate' => 'required|date',
+            'license' => 'required',
+            'corporate' => 'required',
+            'issue' => 'required|date',
+            'due' => 'required|date',
             'observation' => 'required'
         ]);
 
         $license = new License;
         $license->serial = $request->serial;
-        $license->licenseTypeId = $request->licensetype;
-        $license->corporationId = $request->corporation;
-        $license->issueDate = $request->issuedate;
-        $license->dueDate = $request->duedate;
+        $license->licenseTypeId = $request->license;
+        $license->corporateId = $request->corporate;
+        $license->issueDate = $request->issue;
+        $license->dueDate = $request->due;
         $license->observation = $request->observation;
         $license->save();
 
@@ -69,19 +69,19 @@ class LicenseController extends Controller
     {
         $this->validate($request, [
             'serial' => 'required',
-            'licensetype' => 'required',
-            'corporation' => 'required',
-            'issuedate' => 'required|date',
-            'duedate' => 'required|date',
+            'license' => 'required',
+            'corporate' => 'required',
+            'issue' => 'required|date',
+            'due' => 'required|date',
             'observation' => 'required'
         ]);
 
         $license = License::find($id);
         $license->serial = $request->serial;
-        $license->licenseTypeId = $request->licensetype;
-        $license->corporationId = $request->corporation;
-        $license->issueDate = $request->issuedate;
-        $license->dueDate = $request->duedate;
+        $license->licenseTypeId = $request->license;
+        $license->corporateId = $request->corporate;
+        $license->issueDate = $request->issue;
+        $license->dueDate = $request->due;
         $license->observation = $request->observation;
         $license->save();
 
