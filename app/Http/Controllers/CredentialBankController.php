@@ -59,7 +59,8 @@ class CredentialBankController extends Controller
      */
     public function show($id)
     {
-        //
+        $credentialbank = CredentialBank::where('corporateId', $id)->get();
+        return response()->json($credentialbank);
     }
 
     /**

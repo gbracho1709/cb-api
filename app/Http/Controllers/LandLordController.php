@@ -61,7 +61,8 @@ class LandlordController extends Controller
      */
     public function show($id)
     {
-        //
+        $landlord = Landlord::where('corporateId', $id)->first();
+        return response()->json($landlord);
     }
 
     /**

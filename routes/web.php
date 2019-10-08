@@ -65,14 +65,17 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 
     $router->get('/credentialbanks', 'CredentialBankController@index');
     $router->post('/credentialbank', 'CredentialBankController@store');
+    $router->get('/credentialbank/{id}', 'CredentialBankController@show');
     $router->put('/credentialbank/{id}', 'CredentialBankController@update');
 
     $router->get('/credentials', 'CredentialController@index');
     $router->post('/credential', 'CredentialController@store');
+    $router->get('/credential/{id}', 'CredentialController@show');
     $router->put('/credential/{id}', 'CredentialController@update');
 
     $router->get('/landlords', 'LandlordController@index');
     $router->post('/landlord', 'LandlordController@store');
+    $router->get('/landlord/{id}', 'LandlordController@show');
     $router->put('/landlord/{id}', 'LandlordController@update');
 
     $router->get('/licenses', 'LicenseController@index');
@@ -81,6 +84,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 
     $router->get('/sharedholders', 'SharedholderController@index');
     $router->post('/sharedholder', 'SharedholderController@store');
+    $router->get('/sharedholder/{id}', 'SharedholderController@show');
     $router->put('/sharedholder/{id}', 'SharedholderController@update');
 
     $router->get('/corporates', 'CorporateController@index');
