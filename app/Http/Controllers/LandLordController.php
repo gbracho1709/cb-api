@@ -47,7 +47,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->corporateId = $request->corporate;
+        $landlord->corporateRef = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);
@@ -61,7 +61,7 @@ class LandlordController extends Controller
      */
     public function show($id)
     {
-        $landlord = Landlord::where('corporateId', $id)->first();
+        $landlord = Landlord::where('corporateRef', $id)->first();
         return response()->json($landlord);
     }
 
@@ -95,7 +95,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->corporateId = $request->corporate;
+        $landlord->corporateRef = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);

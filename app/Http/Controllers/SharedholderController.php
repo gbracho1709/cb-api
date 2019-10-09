@@ -51,7 +51,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->corporateId = $request->corporate;
+        $sharedholder->corporateRef = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);
@@ -65,7 +65,7 @@ class SharedholderController extends Controller
      */
     public function show($id)
     {
-        $sharedholder = Sharedholder::where('corporateId', $id)->get();
+        $sharedholder = Sharedholder::where('corporateRef', $id)->get();
         return response()->json($sharedholder);
     }
 
@@ -103,7 +103,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->corporateId = $request->corporate;
+        $sharedholder->corporateRef = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);

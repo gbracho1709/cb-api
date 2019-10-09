@@ -25,13 +25,13 @@ class CreateSharedholdersTable extends Migration
             $table->integer('share');
             $table->string('email');
             $table->string('phone');
-            $table->unsignedBigInteger('corporateId');
+            $table->uuid('corporateRef');
             $table->timestamps();
         });
 
         Schema::table('sharedholders', function ($table) {
             $table->foreign('cityId')->references('id')->on('cities');
-            $table->foreign('corporateId')->references('id')->on('corporates');
+            $table->foreign('corporateRef')->references('uuid')->on('corporates');
         });
     }
 

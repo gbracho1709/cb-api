@@ -22,13 +22,13 @@ class CreateCredentialBanksTable extends Migration
             $table->string('password');
             $table->string('routing');
             $table->string('account');
-            $table->unsignedBigInteger('corporateId');
+            $table->uuid('corporateRef');
             $table->timestamps();
         });
 
         Schema::table('credential_banks', function ($table) {
             $table->foreign('typeId')->references('id')->on('bank_accounts');
-            $table->foreign('corporateId')->references('id')->on('corporates');
+            $table->foreign('corporateRef')->references('uuid')->on('corporates');
             $table->foreign('bankId')->references('id')->on('banks');
         });
     }

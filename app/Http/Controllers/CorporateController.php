@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Corporate;
 
 class CorporateController extends Controller
@@ -43,6 +44,7 @@ class CorporateController extends Controller
         ]);
 
         $corporate = new Corporate;
+        $corporate->uuid = Str::uuid();
         $corporate->name = $request->name;
         $corporate->address = $request->address;
         $corporate->website = $request->website;

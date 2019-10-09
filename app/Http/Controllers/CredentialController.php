@@ -43,7 +43,7 @@ class CredentialController extends Controller
         $credential->pin = $request->pin;
         $credential->other = $request->other;
         $credential->inputId = $request->input;
-        $credential->corporateId = $request->corporate;
+        $credential->corporateRef = $request->corporate;
         $credential->save();
 
         return response()->json($credential);
@@ -57,7 +57,7 @@ class CredentialController extends Controller
      */
     public function show($id)
     {
-        $credential = Credential::where('corporateId', $id)->get();
+        $credential = Credential::where('corporateRef', $id)->get();
         return response()->json($credential);
     }
 
@@ -87,7 +87,7 @@ class CredentialController extends Controller
         $credential->pin = $request->pin;
         $credential->other = $request->other;
         $credential->inputId = $request->input;
-        $credential->corporateId = $request->corporate;
+        $credential->corporateRef = $request->corporate;
         $credential->save();
 
         return response()->json($credential);

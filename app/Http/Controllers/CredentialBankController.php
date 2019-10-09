@@ -45,7 +45,7 @@ class CredentialBankController extends Controller
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporateId = $request->corporate;
+        $credentialbank->corporateRef = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);
@@ -59,7 +59,7 @@ class CredentialBankController extends Controller
      */
     public function show($id)
     {
-        $credentialbank = CredentialBank::where('corporateId', $id)->get();
+        $credentialbank = CredentialBank::where('corporateRef', $id)->get();
         return response()->json($credentialbank);
     }
 
@@ -91,7 +91,7 @@ class CredentialBankController extends Controller
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporateId = $request->corporate;
+        $credentialbank->corporateRef = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);
