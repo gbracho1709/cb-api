@@ -63,8 +63,7 @@ class AuthController extends Controller
             'iss' => "cabrera-business", // Issuer of the token
             'sub' => $user->id, // Subject of the token
             'iat' => time(), // Time when JWT was issued. 
-            'exp' => time() + 60 * 60, // Expiration time 
-            // 'exp' => '500', // Expiration time 
+            'exp' => time() + 60 * 60, // Expiration time             
             'data' => $user->discriminator
         ];
 
