@@ -62,8 +62,8 @@ $app->singleton(
 // ]);
 
 $app->routeMiddleware([
-    'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
-    'auth' => App\Http\Middleware\Authenticate::class,
+    'auth' => App\Http\Middleware\JwtMiddleware::class,
+    // 'auth' => App\Http\Middleware\Authenticate::class,
     'administrator' => App\Http\Middleware\Administrator::class,
     'office' => App\Http\Middleware\Office::class
 ]);
@@ -85,7 +85,7 @@ $app->middleware([
 
 $app->register(\SwaggerLume\ServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\AuthServiceProvider::class);
+// $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(\Illuminate\Mail\MailServiceProvider::class);
 // $app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
