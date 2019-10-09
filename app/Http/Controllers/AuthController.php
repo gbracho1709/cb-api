@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Firebase\JWT\JWT;
+use Firebase\JWT\ExpiredException;
 use App\User;
 
 class AuthController extends Controller
@@ -62,12 +63,26 @@ class AuthController extends Controller
             'iss' => "cabrera-business", // Issuer of the token
             'sub' => $user->id, // Subject of the token
             'iat' => time(), // Time when JWT was issued. 
-            'exp' => time() + 60 * 60, // Expiration time
+            'exp' => time() + 60 * 60, // Expiration time 
+            // 'exp' => '500', // Expiration time 
             'data' => $user->discriminator
         ];
 
         // As you can see we are passing `JWT_SECRET` as the second parameter that will 
         // be used to decode the token in the future.
         return JWT::encode($payload, env('JWT_SECRET'));
+    }
+
+    public function refresh(Request $request)
+    {
+        $this->validate($request, [
+            'token' => 'required'
+        ]);
+
+        $user = User::find(base64_decode($request->input('token')))->first();
+
+        return response()->json([
+            'token' => $this->jwt($user)
+        ]);
     }
 }

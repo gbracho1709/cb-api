@@ -26,6 +26,7 @@ $router->get('/invitation', function () use ($router) {
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     //auth//
     $router->post('/auth', 'AuthController@access');
+    $router->post('/auth/refresh', 'AuthController@refresh');
     //user//
     $router->post('/recovery', 'UserController@recovery');
     $router->put('/reset/{token}', 'UserController@reset');
