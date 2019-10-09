@@ -18,7 +18,7 @@ class JwtMiddleware
             // Unauthorized response if token not there
             return response()->json([
                 'error' => 'Token not provided.'
-            ], 401);
+            ], 400);
         }
         try {
             $credentials = JWT::decode($token, env('JWT_SECRET'), ['HS256']);

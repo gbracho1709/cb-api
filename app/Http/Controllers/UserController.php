@@ -80,7 +80,7 @@ class UserController extends Controller
             return response()->json();
         }
 
-        return response()->json(["error" => "user not exist"], 401);
+        return response()->json(["error" => "user not exist"], 400);
     }
 
     public function reset(Request $request, $token)

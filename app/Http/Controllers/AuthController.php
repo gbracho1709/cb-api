@@ -47,7 +47,7 @@ class AuthController extends Controller
                     'token' => $this->jwt($user)
                 ]);
             } else {
-                return response()->json(['error' => 'Password is incorrect'], 401);
+                return response()->json(['error' => 'Password is incorrect'], 400);
             }
         } else {
 
