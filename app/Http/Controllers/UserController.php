@@ -135,6 +135,23 @@ class UserController extends Controller
         return response()->json(["error" => "User already exists"], 400);
     }
 
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'discriminator' => 'required'
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->discriminator = $request->discriminator;
+        $user->save();
+        return response()->json($user);
+    }
 
     public function invitation(Request $request)
     { }
