@@ -49,4 +49,31 @@ class OfficeController extends Controller
 
         return response()->json($office);
     }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'dba' => 'required',
+            'phone' => 'required',
+            'fax' => 'required',
+            'ein' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'zip' => 'required'
+        ]);
+
+        $office = Office::find($id);
+        $office->name = $request->name;
+        $office->dba = $request->dba;
+        $office->phone = $request->phone;
+        $office->fax = $request->fax;
+        $office->ein = $request->ein;
+        $office->address = $request->address;
+        $office->cityId = $request->city;
+        $office->zip = $request->zip;
+        $office->save();
+
+        return response()->json($office);
+    }
 }
