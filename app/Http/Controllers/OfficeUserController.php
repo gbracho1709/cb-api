@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Carbon\Carbon;
 use App\OfficeUser;
 
 class OfficeUserController extends Controller
@@ -36,6 +34,23 @@ class OfficeUserController extends Controller
         ]);
 
         $user = new OfficeUser;
+        $user->user = $request->user;
+        $user->office = $request->office;
+        $user->owner = $request->owner;
+        $user->save();
+
+        return response()->json($user);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'user' => 'required',
+            'office' => 'required',
+            'owner' => 'required'
+        ]);
+
+        $user = OfficeUser::find($id);
         $user->user = $request->user;
         $user->office = $request->office;
         $user->owner = $request->owner;

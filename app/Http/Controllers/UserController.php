@@ -151,7 +151,8 @@ class UserController extends Controller
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|email',
-            'discriminator' => 'required'
+            'discriminator' => 'required',
+            'isActive' => 'required|boolean'
         ]);
 
         $user = User::find($id);
@@ -159,6 +160,7 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->discriminator = $request->discriminator;
+        $user->isActive = $request->isActive;
         $user->save();
         return response()->json($user);
     }

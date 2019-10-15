@@ -106,6 +106,7 @@ $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use
     //office user//
     $router->get('/office/users/{owner}', 'OfficeUserController@find');
     $router->post('/office/user', 'OfficeUserController@store');
+    $router->put('/office/user/{id}', 'OfficeUserController@update');
 });
 
 $router->group(['middleware' => ['auth', 'administrator'], 'prefix' => 'api/v1'], function () use ($router) {
