@@ -17,16 +17,16 @@ class CreateFeesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('planId');
             $table->unsignedBigInteger('schemeId');
-            $table->dateTime('started');
+            $table->dateTime('startOn');
             $table->string('fee');
-            $table->unsignedBigInteger('corporateId');
+            $table->uuid('corporateRef');
             $table->timestamps();
         });
 
         Schema::table('fees', function ($table) {
             $table->foreign('planId')->references('id')->on('plans');
             $table->foreign('schemeId')->references('id')->on('schemes');
-            $table->foreign('corporateId')->references('id')->on('corporates');
+            $table->foreign('corporateRef')->references('uuid')->on('corporates');
         });
     }
 

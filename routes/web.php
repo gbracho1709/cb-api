@@ -91,6 +91,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/corporates', 'CorporateController@index');
     $router->post('/corporate', 'CorporateController@store');
     $router->put('/corporate/{id}', 'CorporateController@update');
+
+    $router->get('/fee/{id}', 'FeeController@show');
+    $router->post('/fee', 'FeeController@store');
+    $router->put('/fee/{id}', 'FeeController@update');
 });
 
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
