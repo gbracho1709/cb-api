@@ -30,6 +30,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     //user//
     $router->post('/recovery', 'UserController@recovery');
     $router->put('/reset/{token}', 'UserController@reset');
+    $router->get('/check/{token}', 'UserController@check');
     $router->put('/activate/{token}', 'UserController@activate');
     //location//    
     $router->get('/location/cities', 'LocationController@city');

@@ -27,9 +27,17 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function check($request)
+    {
+        $user = User::where('token', $request)->first();
+        return response()->json($user);
+    }
+
     public function activate(Request $request, $token)
     {
         $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
             'password' => 'required'
         ]);
 
@@ -38,6 +46,8 @@ class UserController extends Controller
         if (!empty($user)) {
             if ($user->dueDate > Carbon::now()) {
                 $user->password = Hash::make($request->password);
+                $user->name = $request->name;
+                $user->phone = $request->phone;
                 $user->isActive = true;
                 $user->dueDate = null;
                 $user->token = null;
