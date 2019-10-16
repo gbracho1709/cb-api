@@ -63,8 +63,11 @@ class AuthController extends Controller
             'iss' => "cabrera-business", // Issuer of the token
             'sub' => $user->id, // Subject of the token
             'iat' => time(), // Time when JWT was issued. 
-            'exp' => time() + 60 * 60, // Expiration time             
-            'data' => $user->discriminator
+            'exp' => time() + 60 * 60, // Expiration time                    
+            'data' => [
+                'nae' => $user->name,
+                'dir' => $user->discriminator
+            ]
         ];
 
         // As you can see we are passing `JWT_SECRET` as the second parameter that will 

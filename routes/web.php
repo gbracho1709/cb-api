@@ -116,4 +116,6 @@ $router->group(['middleware' => ['auth', 'administrator'], 'prefix' => 'api/v1']
     $router->put('/office/{id}', 'OfficeController@update');
 });
 
-$router->group(['middleware' => ['auth', 'office'], 'prefix' => 'api/v1'], function () use ($router) { });
+$router->group(['middleware' => ['auth', 'office'], 'prefix' => 'api/v1'], function () use ($router) {
+    $router->get('/office/{id}', 'OfficeController@show');
+});
