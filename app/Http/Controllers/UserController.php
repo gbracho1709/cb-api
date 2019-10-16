@@ -21,9 +21,9 @@ class UserController extends Controller
         //
     }
 
-    public function find($request)
+    public function show($request)
     {
-        $user = User::find($request)->first();
+        $user = User::find($request);
         return response()->json($user);
     }
 

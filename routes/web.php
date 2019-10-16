@@ -102,7 +102,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
     //user//
     $router->post('/user', 'UserController@store');
-    $router->get('/user/{id}', 'UserController@find');
+    $router->get('/user/{id}', 'UserController@show');
     $router->put('/user/{id}', 'UserController@update');
     //office user//
     $router->get('/office/users/{owner}', 'OfficeUserController@find');
