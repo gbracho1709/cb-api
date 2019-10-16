@@ -17,12 +17,23 @@ class OfficeController extends Controller
         //
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $office = Office::All();
         return response()->json($office);
-    }   
+    }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -50,6 +61,12 @@ class OfficeController extends Controller
         return response()->json($office);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
