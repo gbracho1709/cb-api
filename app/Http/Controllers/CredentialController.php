@@ -57,7 +57,7 @@ class CredentialController extends Controller
      */
     public function show($id)
     {
-        $credential = Credential::where('corporateRef', $id)->get();
+        $credential = Credential::where('uuid', $id)->get();
         return response()->json($credential);
     }
 
