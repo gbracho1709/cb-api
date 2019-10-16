@@ -20,6 +20,16 @@ class Corporate extends Model
 
     public function shareholder()
     {
-        return $this->belongsTo('App\Office', 'office');
+        return $this->hasMany('App\Shareholder', 'reference', 'uuid');
+    }
+
+    public function credential()
+    {
+        return $this->hasMany('App\Credential', 'reference', 'uuid');
+    }
+
+    public function bank()
+    {
+        return $this->hasMany('App\CredentialBank', 'reference', 'uuid');
     }
 }

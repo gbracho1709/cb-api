@@ -72,7 +72,7 @@ class CorporateController extends Controller
     public function print($id)
     {
         $corporate = Corporate::where('uuid', $id)
-            ->with('landlord')
+            ->with(['landlord', 'shareholder', 'credential', 'bank'])
             ->first();
         return response()->json($corporate);
     }
