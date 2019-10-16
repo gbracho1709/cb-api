@@ -19,14 +19,14 @@ class CreateFeesTable extends Migration
             $table->unsignedBigInteger('schemeId');
             $table->dateTime('startOn');
             $table->string('fee');
-            $table->uuid('corporateRef');
+            $table->uuid('reference');
             $table->timestamps();
         });
 
         Schema::table('fees', function ($table) {
             $table->foreign('planId')->references('id')->on('plans');
             $table->foreign('schemeId')->references('id')->on('schemes');
-            $table->foreign('corporateRef')->references('uuid')->on('corporates');
+            $table->foreign('reference')->references('uuid')->on('corporates');
         });
     }
 

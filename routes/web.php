@@ -92,7 +92,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/corporates', 'CorporateController@index');
     $router->post('/corporate', 'CorporateController@store');
     $router->put('/corporate/{id}', 'CorporateController@update');
-    $router->get('/corporate/{id}', 'CorporateController@show');
+    $router->get('/corporate/pdf/{id}', 'CorporateController@print');
 
     $router->get('/fee/{id}', 'FeeController@show');
     $router->post('/fee', 'FeeController@store');

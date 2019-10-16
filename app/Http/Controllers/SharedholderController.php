@@ -65,7 +65,7 @@ class SharedholderController extends Controller
      */
     public function show($id)
     {
-        $sharedholder = Sharedholder::where('uuid', $id)->get();
+        $sharedholder = Sharedholder::where('reference', $id)->get();
         return response()->json($sharedholder);
     }
 

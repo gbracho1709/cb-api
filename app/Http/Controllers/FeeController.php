@@ -62,7 +62,7 @@ class FeeController extends Controller
      */
     public function show($id)
     {
-        $fee = Fee::where('uuid', $id)->first();
+        $fee = Fee::where('reference', $id)->first();
         return response()->json($fee);
     }
 

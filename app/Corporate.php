@@ -15,7 +15,7 @@ class Corporate extends Model
 
     public function landlord()
     {
-        return $this->belongsTo('App\Landlord', 'corporateRef');
+        return $this->hasMany('App\Sharedholder', 'uuid');
     }
 
     public function office()

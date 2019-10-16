@@ -69,10 +69,10 @@ class CorporateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function print($id)
     {
         $corporate = Corporate::where('uuid', $id)
-            ->with(['landlord'])
+            ->with('landlord')
             ->first();
         return response()->json($corporate);
     }
