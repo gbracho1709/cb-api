@@ -45,7 +45,7 @@ class CredentialBankController extends Controller
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporateRef = $request->corporate;
+        $credentialbank->uuid = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);
@@ -91,7 +91,7 @@ class CredentialBankController extends Controller
         $credentialbank->password = $request->password;
         $credentialbank->routing = $request->routing;
         $credentialbank->account = $request->account;
-        $credentialbank->corporateRef = $request->corporate;
+        $credentialbank->uuid = $request->corporate;
         $credentialbank->save();
 
         return response()->json($credentialbank);

@@ -48,7 +48,7 @@ class FeeController extends Controller
         $fee->schemeId = $request->scheme;
         $fee->startOn = $request->start;
         $fee->fee = $request->fee;
-        $fee->corporateRef = $request->corporate;
+        $fee->uuid = $request->corporate;
         $fee->save();
 
         return response()->json($fee);
@@ -62,7 +62,7 @@ class FeeController extends Controller
      */
     public function show($id)
     {
-        $fee = Fee::where('corporateRef', $id)->first();
+        $fee = Fee::where('uuid', $id)->first();
         return response()->json($fee);
     }
 
@@ -99,7 +99,7 @@ class FeeController extends Controller
         $fee->schemeId = $request->scheme;
         $fee->startOn = $request->start;
         $fee->fee = $request->fee;
-        $fee->corporateRef = $request->corporate;
+        $fee->uuid = $request->corporate;
         $fee->save();
 
         return response()->json($fee);

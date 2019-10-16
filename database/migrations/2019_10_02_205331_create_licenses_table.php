@@ -17,7 +17,7 @@ class CreateLicensesTable extends Migration
             $table->bigIncrements('id');
             $table->string('serial');
             $table->unsignedBigInteger('licenseTypeId');
-            $table->unsignedBigInteger('corporateId');
+            $table->uuid('uuid');
             $table->dateTime('issueDate');
             $table->dateTime('dueDate');
             $table->string('observation');
@@ -26,7 +26,7 @@ class CreateLicensesTable extends Migration
 
         Schema::table('licenses', function ($table) {
             $table->foreign('licenseTypeId')->references('id')->on('license_types');
-            $table->foreign('corporateId')->references('id')->on('corporates');
+            $table->foreign('uuid')->references('uuid')->on('corporates');
         });
     }
 

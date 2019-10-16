@@ -38,7 +38,7 @@ class LicenseController extends Controller
         $license = new License;
         $license->serial = $request->serial;
         $license->licenseTypeId = $request->license;
-        $license->corporateId = $request->corporate;
+        $license->uuid = $request->corporate;
         $license->issueDate = $request->issue;
         $license->dueDate = $request->due;
         $license->observation = $request->observation;
@@ -79,7 +79,7 @@ class LicenseController extends Controller
         $license = License::find($id);
         $license->serial = $request->serial;
         $license->licenseTypeId = $request->license;
-        $license->corporateId = $request->corporate;
+        $license->uuid = $request->corporate;
         $license->issueDate = $request->issue;
         $license->dueDate = $request->due;
         $license->observation = $request->observation;
