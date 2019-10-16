@@ -18,7 +18,7 @@ class Administrator
     {
         $token = $request->header('Authorization');
         $credentials = JWT::decode($token, env('JWT_SECRET'), ['HS256']);
-        if ($credentials->data != 'administrator') {
+        if ($credentials->data->dir != 'administrator') {
             return response('Unauthorized role', 400);
         }
         return $next($request);

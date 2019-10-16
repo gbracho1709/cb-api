@@ -25,6 +25,14 @@ class OfficeUserController extends Controller
         return response()->json($officeUser);
     }
 
+    public function office($request)
+    {
+        $officeUser = OfficeUser::where('user', $request)
+            ->with('office')
+            ->get();
+        return response()->json($officeUser);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

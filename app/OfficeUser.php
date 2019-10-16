@@ -17,4 +17,9 @@ class OfficeUser extends Model
     {
         return $this->belongsTo('App\User', 'user');
     }
+
+    public function office()
+    {
+        return $this->belongsTo('App\Office', 'office');
+    }
 }

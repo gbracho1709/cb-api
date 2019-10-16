@@ -18,7 +18,7 @@ class Office
     {
         $token = $request->header('Authorization');
         $credentials = JWT::decode($token, env('JWT_SECRET'), ['HS256']);
-        if ($credentials->data != 'office') {
+        if ($credentials->data->dir != 'office') {
             return response('Unauthorized role', 400);
         }
         return $next($request);
