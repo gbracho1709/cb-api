@@ -17,7 +17,12 @@ class OfficeUserController extends Controller
         //
     }
 
-    public function find($request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function user($request)
     {
         $officeUser = OfficeUser::where('owner', $request)
             ->with('user')
@@ -25,14 +30,25 @@ class OfficeUserController extends Controller
         return response()->json($officeUser);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function office($request)
     {
         $officeUser = OfficeUser::where('user', $request)
             ->with('office')
-            ->first();
+            ->get();
         return response()->json($officeUser);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -50,6 +66,12 @@ class OfficeUserController extends Controller
         return response()->json($user);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [

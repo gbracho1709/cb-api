@@ -104,9 +104,10 @@ $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use
     $router->post('/user', 'UserController@store');
     $router->get('/user/{id}', 'UserController@show');
     $router->put('/user/{id}', 'UserController@update');
+    $router->put('/user/state/{id}', 'UserController@state');
     //office user//
-    $router->get('/office/users/{owner}', 'OfficeUserController@find');
-    $router->get('/office/user/owner/{user}', 'OfficeUserController@office');
+    $router->get('/office/users/{owner}', 'OfficeUserController@user');
+    $router->get('/office/users/owner/{user}', 'OfficeUserController@office');
     $router->post('/office/user', 'OfficeUserController@store');
     $router->put('/office/user/{id}', 'OfficeUserController@update');
 });

@@ -150,21 +150,26 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required',
-            'email' => 'required|email',
-            'discriminator' => 'required',
-            'isActive' => 'required|boolean'
+            'email' => 'required|email'
         ]);
 
         $user = User::find($id);
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->email = $request->email;
-        $user->discriminator = $request->discriminator;
-        $user->isActive = $request->isActive;
         $user->save();
         return response()->json($user);
     }
 
-    public function invitation(Request $request)
-    { }
+    public function state(Request $request, $id)
+    {
+        $this->validate($request, [
+            'state' => 'required|boolean'
+        ]);
+
+        $user = User::find($id);
+        $user->isActive = $request->state;
+        $user->save();
+        return response()->json($user);
+    }
 }
