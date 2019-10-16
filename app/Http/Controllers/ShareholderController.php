@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Sharedholder;
+use App\Shareholder;
 
-class SharedholderController extends Controller
+class ShareholderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SharedholderController extends Controller
      */
     public function index()
     {
-        $sharedholder = Sharedholder::All();
-        return response()->json($sharedholder);
+        $shareholder = Shareholder::All();
+        return response()->json($shareholder);
     }
 
     /**
@@ -40,21 +40,21 @@ class SharedholderController extends Controller
             'corporate' => 'required'
         ]);
 
-        $sharedholder = new Sharedholder;
-        $sharedholder->name = $request->name;
-        $sharedholder->title = $request->title;
-        $sharedholder->securitySocial = $request->securitysocial;
-        $sharedholder->address = $request->address;
-        $sharedholder->cityId = $request->city;
-        $sharedholder->zip = $request->zip;
-        $sharedholder->birthDay = $request->birthday;
-        $sharedholder->share = $request->share;
-        $sharedholder->email = $request->email;
-        $sharedholder->phone = $request->phone;
-        $sharedholder->reference = $request->corporate;
-        $sharedholder->save();
+        $shareholder = new Shareholder;
+        $shareholder->name = $request->name;
+        $shareholder->title = $request->title;
+        $shareholder->securitySocial = $request->securitysocial;
+        $shareholder->address = $request->address;
+        $shareholder->cityId = $request->city;
+        $shareholder->zip = $request->zip;
+        $shareholder->birthDay = $request->birthday;
+        $shareholder->share = $request->share;
+        $shareholder->email = $request->email;
+        $shareholder->phone = $request->phone;
+        $shareholder->reference = $request->corporate;
+        $shareholder->save();
 
-        return response()->json($sharedholder);
+        return response()->json($shareholder);
     }
 
     /**
@@ -65,8 +65,8 @@ class SharedholderController extends Controller
      */
     public function show($id)
     {
-        $sharedholder = Sharedholder::where('reference', $id)->get();
-        return response()->json($sharedholder);
+        $shareholder = Shareholder::where('reference', $id)->get();
+        return response()->json($shareholder);
     }
 
     /**
@@ -92,21 +92,21 @@ class SharedholderController extends Controller
             'corporate' => 'required'
         ]);
 
-        $sharedholder = Sharedholder::find($id);
-        $sharedholder->name = $request->name;
-        $sharedholder->title = $request->title;
-        $sharedholder->securitySocial = $request->securitysocial;
-        $sharedholder->address = $request->address;
-        $sharedholder->cityId = $request->city;
-        $sharedholder->zip = $request->zip;
-        $sharedholder->birthDay = $request->birthday;
-        $sharedholder->share = $request->share;
-        $sharedholder->email = $request->email;
-        $sharedholder->phone = $request->phone;
-        $sharedholder->reference = $request->corporate;
-        $sharedholder->save();
+        $shareholder = Shareholder::find($id);
+        $shareholder->name = $request->name;
+        $shareholder->title = $request->title;
+        $shareholder->securitySocial = $request->securitysocial;
+        $shareholder->address = $request->address;
+        $shareholder->cityId = $request->city;
+        $shareholder->zip = $request->zip;
+        $shareholder->birthDay = $request->birthday;
+        $shareholder->share = $request->share;
+        $shareholder->email = $request->email;
+        $shareholder->phone = $request->phone;
+        $shareholder->reference = $request->corporate;
+        $shareholder->save();
 
-        return response()->json($sharedholder);
+        return response()->json($shareholder);
     }
 
     /**

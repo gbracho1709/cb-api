@@ -84,10 +84,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/license', 'LicenseController@store');
     $router->put('/license/{id}', 'LicenseController@update');
 
-    $router->get('/sharedholders', 'SharedholderController@index');
-    $router->post('/sharedholder', 'SharedholderController@store');
-    $router->get('/sharedholder/{id}', 'SharedholderController@show');
-    $router->put('/sharedholder/{id}', 'SharedholderController@update');
+    $router->get('/shareholders', 'ShareholderController@index');
+    $router->post('/shareholder', 'ShareholderController@store');
+    $router->get('/shareholder/{id}', 'ShareholderController@show');
+    $router->put('/shareholder/{id}', 'ShareholderController@update');
 
     $router->get('/corporates', 'CorporateController@index');
     $router->post('/corporate', 'CorporateController@store');

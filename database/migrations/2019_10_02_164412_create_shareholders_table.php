@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSharedholdersTable extends Migration
+class CreateShareholdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSharedholdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sharedholders', function (Blueprint $table) {
+        Schema::create('shareholders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('title');
@@ -29,7 +29,7 @@ class CreateSharedholdersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('sharedholders', function ($table) {
+        Schema::table('shareholders', function ($table) {
             $table->foreign('cityId')->references('id')->on('cities');
             $table->foreign('reference')->references('uuid')->on('corporates');
         });
@@ -42,6 +42,6 @@ class CreateSharedholdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sharedholders');
+        Schema::dropIfExists('shareholders');
     }
 }

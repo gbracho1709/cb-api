@@ -15,10 +15,10 @@ class Corporate extends Model
 
     public function landlord()
     {
-        return $this->hasMany('App\Landlord', 'reference');
+        return $this->hasOne('App\Landlord', 'reference', 'uuid');
     }
 
-    public function office()
+    public function shareholder()
     {
         return $this->belongsTo('App\Office', 'office');
     }
