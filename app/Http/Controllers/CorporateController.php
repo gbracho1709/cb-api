@@ -71,7 +71,10 @@ class CorporateController extends Controller
      */
     public function show($id)
     {
-        //
+        $corporate = Corporate::where('uuid', $id)
+            ->with(['landlord'])
+            ->first();
+        return response()->json($corporate);
     }
 
     /**

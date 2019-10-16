@@ -29,7 +29,7 @@ class OfficeUserController extends Controller
     {
         $officeUser = OfficeUser::where('user', $request)
             ->with('office')
-            ->get();
+            ->first();
         return response()->json($officeUser);
     }
 

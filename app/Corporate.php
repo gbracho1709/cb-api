@@ -12,4 +12,14 @@ class Corporate extends Model
      * @var array
      */
     protected $fillable = [];
+
+    public function landlord()
+    {
+        return $this->belongsTo('App\Landlord', 'corporateRef');
+    }
+
+    public function office()
+    {
+        return $this->belongsTo('App\Office', 'office');
+    }
 }
