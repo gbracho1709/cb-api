@@ -51,7 +51,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->uuid = $request->corporate;
+        $sharedholder->reference = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);
@@ -103,7 +103,7 @@ class SharedholderController extends Controller
         $sharedholder->share = $request->share;
         $sharedholder->email = $request->email;
         $sharedholder->phone = $request->phone;
-        $sharedholder->uuid = $request->corporate;
+        $sharedholder->reference = $request->corporate;
         $sharedholder->save();
 
         return response()->json($sharedholder);

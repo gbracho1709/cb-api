@@ -43,7 +43,7 @@ class CredentialController extends Controller
         $credential->pin = $request->pin;
         $credential->other = $request->other;
         $credential->inputId = $request->input;
-        $credential->uuid = $request->corporate;
+        $credential->reference = $request->corporate;
         $credential->save();
 
         return response()->json($credential);
@@ -87,7 +87,7 @@ class CredentialController extends Controller
         $credential->pin = $request->pin;
         $credential->other = $request->other;
         $credential->inputId = $request->input;
-        $credential->uuid = $request->corporate;
+        $credential->reference = $request->corporate;
         $credential->save();
 
         return response()->json($credential);

@@ -48,7 +48,7 @@ class FeeController extends Controller
         $fee->schemeId = $request->scheme;
         $fee->startOn = $request->start;
         $fee->fee = $request->fee;
-        $fee->uuid = $request->corporate;
+        $fee->reference = $request->corporate;
         $fee->save();
 
         return response()->json($fee);
@@ -99,7 +99,7 @@ class FeeController extends Controller
         $fee->schemeId = $request->scheme;
         $fee->startOn = $request->start;
         $fee->fee = $request->fee;
-        $fee->uuid = $request->corporate;
+        $fee->reference = $request->corporate;
         $fee->save();
 
         return response()->json($fee);

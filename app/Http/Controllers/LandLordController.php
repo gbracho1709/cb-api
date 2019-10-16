@@ -47,7 +47,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->uuid = $request->corporate;
+        $landlord->reference = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);
@@ -95,7 +95,7 @@ class LandlordController extends Controller
         $landlord->mobile = $request->mobile;
         $landlord->email = $request->email;
         $landlord->note = $request->note;
-        $landlord->uuid = $request->corporate;
+        $landlord->reference = $request->corporate;
         $landlord->save();
 
         return response()->json($landlord);
