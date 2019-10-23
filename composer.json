@@ -17,13 +17,13 @@
         "league/flysystem": "^1.0",
         "ramsey/uuid": "^3.8",
         "vlucas/phpdotenv": "^3.3",
-        "zircote/swagger-php": "^3.0"
+        "zircote/swagger-php": "^3.0",
+        "flipbox/lumen-generator": "^5.6"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",
         "phpunit/phpunit": "^8.0",
-        "mockery/mockery": "^1.0",
-        "flipbox/lumen-generator": "^5.6"
+        "mockery/mockery": "^1.0"        
     },
     "autoload": {
         "classmap": [

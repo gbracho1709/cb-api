@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call('PlansTableSeeder');
         $this->call('SchemesTableSeeder');
         $this->call('ClasificationsTableSeeder');
+        $this->call('FormsTableSeeder');
     }
 }
